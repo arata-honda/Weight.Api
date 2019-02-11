@@ -1,12 +1,12 @@
 class CreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
-      t.string :user_id
+      t.string :user_id, unique: true
       t.string :name
-      t.float :height
-      t.float :goal_weight
-      t.float :goal_bmi
-      t.float :goal_body_fat
+      t.float :height, null: true
+      t.float :goal_weight, null: true
+      t.float :goal_bmi, null: true
+      t.float :goal_body_fat, null: true
 
       t.timestamps
     end
